@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
 
-# Model rooms
 class Room(models.Model):
     number_room = models.PositiveIntegerField()
     cost_per_day = models.DecimalField(max_digits=10, decimal_places=2)
@@ -13,7 +12,6 @@ class Room(models.Model):
         return f"The room №{self.number_room}"
 
 
-# Model for booking
 class Booking(models.Model):
     start_data = models.DateField()
     end_data = models.DateField()

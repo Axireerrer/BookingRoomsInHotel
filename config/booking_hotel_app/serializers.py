@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from booking_hotel_app.models import Room, Booking
 
 
-# Serializer for show data about user who booking the room
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -11,14 +10,12 @@ class UserSerializer(serializers.ModelSerializer):
         ref_name = 'UserSerializer'
 
 
-# Serializer for get list rooms
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
         fields = ['id', 'number_room', 'cost_per_day', 'capacity']
 
 
-# Serializer for get available rooms
 class AvailableRoomSerializer(serializers.ModelSerializer):
     room = RoomSerializer(read_only=True)
 
@@ -27,7 +24,6 @@ class AvailableRoomSerializer(serializers.ModelSerializer):
         fields = ['id', 'start_data', 'end_data', 'room']
 
 
-# Serializer for booking the rooms by user
 class BookTheRoomByUserSerializer(serializers.ModelSerializer):
     room = RoomSerializer(read_only=True)
 
@@ -49,7 +45,6 @@ class BookTheRoomByUserSerializer(serializers.ModelSerializer):
         return instance
 
 
-# Serializer for check user's booked rooms
 class BookedRoomSerializer(serializers.ModelSerializer):
     room = RoomSerializer(read_only=True)
     user = UserSerializer()
