@@ -22,7 +22,7 @@
 
   -  Бэкенд: Django, Django REST Framework (DRF)
   -  База данных: PostgreSQL (предпочтительно, но не обязательно)
-  -  Документация API: endpoint - /docs/swagger <P.S не отражает query параметры для фильтрации и поиска>
+  -  Документация API: endpoint - /docs/swagger 
 
 ## Руководство по установке
 
